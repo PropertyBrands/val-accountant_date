@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "accountant_date"
   gem.homepage = "http://github.com/rylwin/accountant_date"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Accounting-style date parsing}
+  gem.description = %Q{Accountants deals with dates that are simply months (e.g., 01/13). accountant_date parses these mm/yy style dates and allows for other shorthands.}
   gem.email = "ryan@thewinograds.com"
   gem.authors = ["Ryan Winograd"]
   # dependencies defined in Gemfile
