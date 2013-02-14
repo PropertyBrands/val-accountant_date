@@ -18,12 +18,16 @@ describe "Date.parse" do
     Date.parse('203', true).should == Date.new(2003, 2, 1)
   end
 
-  it "should use accountant date format for ddmmyy" do
-    Date.parse('050203', true).should == Date.new(2003, 2, 5)
+  it "should use accountant date format for mmddyyyy" do
+    Date.parse('01152012', true).should == Date.new(2012, 1, 15)
   end
 
-  it "should use accountant date format for dmmyy" do
-    Date.parse('050203', true).should == Date.new(2003, 2, 5)
+  it "should use accountant date format for mmddyy" do
+    Date.parse('020503', true).should == Date.new(2003, 2, 5)
+  end
+
+  it "should use accountant date format for mddyy" do
+    Date.parse('20503', true).should == Date.new(2003, 2, 5)
   end
 
   it "should ignore preceding whitespace" do
@@ -49,11 +53,11 @@ describe "DateTime.parse" do
   end
 
   it "should use accountant date format for ddmmyy" do
-    DateTime.parse('050203', true).should == DateTime.new(2003, 2, 5)
+    DateTime.parse('020503', true).should == DateTime.new(2003, 2, 5)
   end
 
   it "should use accountant date format for dmmyy" do
-    DateTime.parse('050203', true).should == DateTime.new(2003, 2, 5)
+    DateTime.parse('020503', true).should == DateTime.new(2003, 2, 5)
   end
 
   specify "should ignore preceding whitespace" do
@@ -79,11 +83,11 @@ describe "Time.parse" do
   end
 
   it "should use accountant date format for ddmmyy" do
-    Time.parse('050203', true).should == Time.local(2003, 2, 5)
+    Time.parse('020503', true).should == Time.local(2003, 2, 5)
   end
 
   it "should use accountant date format for dmmyy" do
-    Time.parse('050203', true).should == Time.local(2003, 2, 5)
+    Time.parse('020503', true).should == Time.local(2003, 2, 5)
   end
 
   it "should ignore preceding whitespace" do
@@ -113,11 +117,11 @@ describe "Date._parse" do
   end
 
   it "should use accountant date format for ddmmyy" do
-    Date._parse('050203', true).should == {:year=>2003, :mon=>2, :mday=>5}
+    Date._parse('020503', true).should == {:year=>2003, :mon=>2, :mday=>5}
   end
 
   it "should use accountant date format for dmmyy" do
-    Date._parse('050203', true).should == {:year=>2003, :mon=>2, :mday=>5}
+    Date._parse('020503', true).should == {:year=>2003, :mon=>2, :mday=>5}
   end
 
   specify "should ignore preceding whitespace" do

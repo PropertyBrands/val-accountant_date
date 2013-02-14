@@ -1,13 +1,18 @@
 = accountant_date
 
-accountant_date monkey-patches ruby's Date class to add parsing functionality useful for parsing dates entered by accountants.
+accountant_date monkey-patches ruby's Date class to add parsing functionality
+useful for parsing dates entered by accountants.
 
-Accountants often deal with financial periods (mm/yy) and they also hate typing extra characters (e.g., '/') since they enter so many dates. This gem enables ruby to parse the following formats:
+This gem is based on american style dates (e.g., mm/dd/yy) and is compatible
+with (american_date[https://github.com/jeremyevans/ruby-american_date]).
+
+Accountants often deal with financial periods (mm/yy) and they also hate typing
+extra characters (e.g., '/') since they enter so many dates. This gem enables
+ruby to parse the following formats:
 
 * [m]{1,2}/yy
 * [m]{1,2}yy
-* [d]{1,2}mmyy
-* [d]{1,2}/[m]{1,2}/yy
+* [m]{1,2}ddyy
 
 In other words, to parse 1 Feb 2001, the following date entries could be parsed:
 
@@ -15,15 +20,16 @@ In other words, to parse 1 Feb 2001, the following date entries could be parsed:
 * 0201
 * 02/01
 
-Or to get 2 Feb 2001:
+Or to get 3 Feb 2001:
 
-* 20201
-* 020201
-* 2/2/01
+* 20301
+* 020301
+* 2/3/01
 
 == Thanks
 
-A big thanks to Jeremy Evans for the inspiration provided by his american_date gem: https://github.com/jeremyevans/ruby-american_date.
+A big thanks to Jeremy Evans for the inspiration provided by his american_date
+gem: https://github.com/jeremyevans/ruby-american_date.
 
 == Contributing to accountant_date
 

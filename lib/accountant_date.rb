@@ -37,17 +37,17 @@ if RUBY_VERSION >= '1.9'
       end
     end
 
-    # Transform date without slashes into ISO format.
+    # Transform date to have slashes
     def convert_date_no_slashes_to_iso(string)
       case string.length
-      when 8 # ddmmyyyy
-        "#{string[4,4]}-#{string[2,2]}-#{string[0,2]}"
-      when 7 # dmmyyyy
-        "#{string[4,4]}-#{string[2,2]}-#{string[0]}"
-      when 6 # ddmmyy
-        "#{string[4,2]}-#{string[2,2]}-#{string[0,2]}"
-      when 5 # dmmyy
-        "#{string[4,2]}-#{string[2,2]}-#{string[0]}"
+      when 8 # mmddyyyy
+        "#{string[4,4]}-#{string[0,2]}-#{string[2,2]}"
+      when 7 # mddyyyy
+        "#{string[4,4]}-#{string[0]}-#{string[1,2]}"
+      when 6 # mmddyy
+        "#{string[4,2]}-#{string[0,2]}-#{string[2,2]}"
+      when 5 # mddyy
+        "#{string[3,2]}-#{string[0]}-#{string[1,2]}"
       when 4 # mmyy
         "#{string[2,2]}-#{string[0,2]}-1"
       when 3 # myy
