@@ -30,7 +30,8 @@ if RUBY_VERSION >= '1.9'
     def convert_accountant_to_iso(string)
       if string.count('/') == 1
         string.sub(ACCOUNTANT_SLASH_DATE_RE){ |m| "#$2-#$1-1" }
-      elsif string.length <= 8 and string.count('/') == 0
+      elsif string.length <= 8 and string =~ /\d{#{string.length}}/
+        # If the whole string is digits
         convert_date_no_slashes_to_iso(string)
       else
         string

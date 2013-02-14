@@ -33,6 +33,14 @@ describe "Date.parse" do
   it "should ignore preceding whitespace" do
     Date.parse('  02/2003').should == Date.new(2003, 2, 1)
   end
+
+  it "should still process regularly formatted dates" do
+    Date.parse('1900-1-1', true).should == Date.new(1900, 1, 1)
+  end
+
+  it "should still process regularly formatted dates" do
+    Date.parse('1/1/1900', true).should == Date.new(1900, 1, 1)
+  end
 end
 
 describe "DateTime.parse" do
