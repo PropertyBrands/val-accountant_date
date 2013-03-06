@@ -41,6 +41,14 @@ describe "Date.parse" do
   it "should still process regularly formatted dates" do
     Date.parse('1/1/1900', true).should == Date.new(1900, 1, 1)
   end
+
+  it "should return nil for empty string" do
+    Date.parse('').should == nil
+  end
+
+  it "should return nil for nil" do
+    Date.parse(nil).should == nil
+  end
 end
 
 describe "DateTime.parse" do
@@ -68,8 +76,16 @@ describe "DateTime.parse" do
     DateTime.parse('020503', true).should == DateTime.new(2003, 2, 5)
   end
 
-  specify "should ignore preceding whitespace" do
+  it "should ignore preceding whitespace" do
     DateTime.parse('  02/2003').should == DateTime.new(2003, 2, 1)
+  end
+
+  it "should return nil for empty string" do
+    DateTime.parse('').should == nil
+  end
+
+  it "should return nil for nil" do
+    DateTime.parse(nil).should == nil
   end
 end
 
@@ -132,12 +148,20 @@ describe "Date._parse" do
     Date._parse('020503', true).should == {:year=>2003, :mon=>2, :mday=>5}
   end
 
-  specify "should ignore preceding whitespace" do
+  it "should ignore preceding whitespace" do
     Date._parse('  02/2003').should == {:year=>2003, :mon=>2, :mday=>1}
   end
 
-  specify "should work with times" do
+  it "should work with times" do
     DateTime._parse('02/2003 10:20:30').should ==
       {:year=>2003, :mon=>2, :mday=>1, :hour=>10, :min=>20, :sec=>30}
+  end
+
+  it "should return nil for empty string" do
+    Date._parse('').should == nil
+  end
+
+  it "should return nil for nil" do
+    Date._parse(nil).should == nil
   end
 end

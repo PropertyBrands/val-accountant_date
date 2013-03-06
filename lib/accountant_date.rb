@@ -11,6 +11,7 @@ if RUBY_VERSION >= '1.9'
 
     # Transform accountant dates into ISO dates before parsing.
     def _parse(string, comp=true)
+      return if string.nil? or string == ''
       _parse_without_accountant_date(convert_accountant_to_iso(string), comp)
     end
 
@@ -20,6 +21,7 @@ if RUBY_VERSION >= '1.9'
 
       # Transform accountant dates into ISO dates before parsing.
       def parse(string, comp=true)
+        return if string.nil? or string == ''
         parse_without_accountant_date(convert_accountant_to_iso(string), comp)
       end
     end
@@ -67,6 +69,7 @@ if RUBY_VERSION >= '1.9'
 
       # Transform accountant dates into ISO dates before parsing.
       def parse(string, comp=true)
+        return if string.nil? or string == ''
         parse_without_accountant_date(convert_accountant_to_iso(string), comp)
       end
     end
