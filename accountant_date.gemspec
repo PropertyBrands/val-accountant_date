@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "accountant_date"
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ryan Winograd"]
-  s.date = "2013-02-14"
+  s.date = "2013-03-06"
   s.description = "Accountants deals with dates that are simply months (e.g., 01/13). accountant_date parses these mm/yy style dates and allows for other shorthands."
   s.email = "ryan@thewinograds.com"
   s.extra_rdoc_files = [
