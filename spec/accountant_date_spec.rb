@@ -42,8 +42,8 @@ describe "Date.parse" do
     Date.parse('1/1/1900', true).should == Date.new(1900, 1, 1)
   end
 
-  it "should return nil for empty string" do
-    Date.parse('').should == nil
+  it "should return empty string for empty string" do
+    Date.parse('').should == ""
   end
 
   it "should return nil for nil" do
@@ -80,8 +80,8 @@ describe "DateTime.parse" do
     DateTime.parse('  02/2003').should == DateTime.new(2003, 2, 1)
   end
 
-  it "should return nil for empty string" do
-    DateTime.parse('').should == nil
+  it "should return empty string for empty string" do
+    DateTime.parse("").should == ""
   end
 
   it "should return nil for nil" do
@@ -157,8 +157,8 @@ describe "Date._parse" do
       {:year=>2003, :mon=>2, :mday=>1, :hour=>10, :min=>20, :sec=>30}
   end
 
-  it "should return nil for empty string" do
-    Date._parse('').should == nil
+  it "should return empty string for empty string" do
+    Date._parse("").should == ""
   end
 
   it "should return nil for nil" do
